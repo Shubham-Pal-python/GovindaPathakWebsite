@@ -1,0 +1,339 @@
+/* Google Fonts - Playfair Display (for headings) and Lato (for body text) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@300;400;700&display=swap');
+
+/* Custom Variables (overriding Bootstrap where necessary, or for custom elements) */
+:root {
+    --bs-primary: #D2691E; /* Chocolate - Our main brand color */
+    --bs-secondary: #A0522D; /* Sienna - Secondary brand color */
+    --bs-success: #28a745; /* Green for success (Bootstrap default) */
+    --bs-info: #17a2b8; /* Info blue (Bootstrap default) */
+    --bs-warning: #ffc107; /* Warning yellow (Bootstrap default) */
+    --bs-danger: #dc3545; /* Danger red (Bootstrap default) */
+    --bs-dark: #343a40; /* Dark for navbar/footer (Bootstrap default) */
+    --bs-light: #f8f9fa; /* Light background (Bootstrap default) */
+    --bs-body-color: #343a40; /* Darker text for readability */
+    --bs-body-font-family: 'Lato', sans-serif;
+    --bs-heading-font-family: 'Playfair Display', serif;
+}
+
+/* General Body Styling */
+body {
+    font-family: var(--bs-body-font-family);
+    color: var(--bs-body-color);
+    line-height: 1.8;
+    padding-top: 76px; /* Offset for fixed navbar height on larger screens */
+}
+
+/* Adjust padding-top for smaller screens if navbar collapses */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 56px; /* Adjust for default Bootstrap mobile navbar height */
+    }
+}
+
+
+/* Custom Headings */
+.custom-heading {
+    font-family: var(--bs-heading-font-family);
+    font-weight: 800;
+    font-size: 3.2rem; /* Larger, more impactful headings */
+    position: relative;
+    padding-bottom: 15px; /* Space for the underline effect */
+    color: var(--bs-dark); /* Ensure it stands out */
+}
+
+.custom-heading::after {
+    content: '';
+    display: block;
+    width: 80px; /* Wider underline */
+    height: 6px; /* Thicker underline */
+    background-color: var(--bs-primary); /* Primary color for underline */
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+/* Navbar Customization */
+.navbar {
+    padding-top: 0.3rem; /* Further reduced padding */
+    padding-bottom: 0.3rem; /* Further reduced padding */
+}
+
+/* Adjust padding-top for smaller screens if navbar collapses */
+@media (max-width: 991.98px) {
+    body {
+        /* Keep this as it is, or adjust based on your specific mobile navbar height */
+        padding-top: 50px; /* Slightly reduce body padding for mobile too */
+    }
+}
+
+.navbar-brand img {
+    height: 30px; /* Even smaller logo */
+    width: 30px; /* Consistent width */
+}
+
+.navbar-brand span {
+    font-size: 0.9rem; /* Smaller font for the brand name */
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.9rem; /* Smaller font size for navigation links */
+    padding-top: 0.4rem; /* Adjust vertical padding of links */
+    padding-bottom: 0.4rem; /* Adjust vertical padding of links */
+}
+
+/* Adjust the ::after pseudo-element for nav links if needed to match new size */
+.navbar-nav .nav-link::after {
+    height: 2px; /* Thinner underline */
+    bottom: -3px; /* Adjust offset */
+}
+/* Hero Section */
+.hero-section {
+    /* Make sure you have 'images/hero-bg.jpg' in your project folder */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    padding-top: 0; /* Remove default padding from section-padding as it's full height */
+    animation: fadeIn 1.5s ease-out; /* Uses animate.css library for animation */
+}
+
+.hero-section h1 {
+    font-family: var(--bs-heading-font-family);
+    font-size: 4.5rem; /* Adjust as needed */
+    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.hero-section p.lead {
+    font-size: 1.6rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* Custom Buttons */
+.custom-btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    padding: 15px 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.custom-btn-primary:hover {
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.custom-btn-secondary {
+    background-color: transparent !important;
+    border-color: var(--bs-white) !important;
+    color: var(--bs-white) !important;
+    padding: 15px 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Sections Padding */
+.custom-section-padding {
+    padding-top: 6rem; /* Adjust padding for sections */
+    padding-bottom: 6rem;
+}
+
+/* About Us Section */
+.about-section p {
+    font-size: 1.15rem;
+}
+
+.custom-image-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-image-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25) !important;
+}
+
+/* Previous Years Section */
+.custom-card-shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Stronger shadow for cards */
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.custom-gallery-img {
+    height: 250px; /* Uniform height for images */
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.custom-video-shadow {
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+
+/* Join Us Section */
+.custom-list-icons li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.custom-list-icons .fa-check-circle {
+    color: var(--bs-primary); /* Use primary color for check icons */
+}
+
+.custom-form-card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.2) !important; /* Stronger shadow for the form card */
+    border-radius: 1rem;
+}
+
+.form-help-text a {
+    font-weight: 600;
+    color: var(--bs-secondary) !important;
+}
+
+/* Contact Us Section */
+.contact-info .fa-envelope,
+.contact-info .fa-phone-alt,
+.contact-info .fa-map-marker-alt {
+    color: var(--bs-primary);
+    font-size: 1.3rem;
+}
+
+.social-links a {
+    color: var(--bs-dark) !important;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--bs-primary) !important;
+}
+
+/* Contact Us Section */
+.contact-info .fa-envelope,
+.contact-info .fa-phone-alt,
+.contact-info .fa-map-marker-alt {
+    color: var(--bs-primary);
+    font-size: 1.3rem;
+}
+
+/* New CSS for the map container */
+.map-container {
+    position: relative;
+    padding-bottom: 75%; /* This creates a 4:3 aspect ratio (450/600 = 0.75 or 75%) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #eee; /* Placeholder background */
+    margin-bottom: 1.5rem; /* Add some space below the map */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.social-links a {
+    color: var(--bs-dark) !important;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--bs-primary) !important;
+}
+
+/* Footer */
+footer .footer-links a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: var(--bs-white) !important;
+}
+
+/* Gallery Slider Specific Styles */
+#gallery-slider {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  /* Hide scrollbar for various browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+#gallery-slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Ensure gallery items take up appropriate width and don't shrink */
+#gallery-slider .gallery-item {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    width: 23%; /* Adjust width as needed for desired number of visible images */
+    /* For smaller screens, adjust width */
+    @media (max-width: 767.98px) {
+        width: 48%; /* 2 images per row on small screens */
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        width: 31%; /* 3 images per row on medium screens */
+    }
+}
+
+#gallery-slider img {
+    width: 100%;
+    height: 200px; /* Fixed height for gallery images */
+    object-fit: cover;
+}
+
+/* Animations (from animate.css - only apply classes in HTML) */
+/* Example for fadeIn is in the hero section. Explore animate.css documentation for more! */
+
+/* Scroll to Top Button (Optional - add to HTML if desired) */
+/*
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+*/
