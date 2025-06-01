@@ -1,2 +1,2 @@
 # GovindaPathakWebsite
-just for practise
+just for practises
